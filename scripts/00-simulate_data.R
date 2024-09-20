@@ -1,19 +1,39 @@
 #### Preamble ####
-# Purpose: Simulates... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Simulates marriage licence statistics
+# Author: Gadiel David Flores
+# Date: 19 September, 2024
+# Contact: gadieldavid.flores@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: Nothing
+# Any other information needed? Nothing
 
 
 #### Workspace setup ####
 library(tidyverse)
-# [...UPDATE THIS...]
-
+library(ggplot2)
 #### Simulate data ####
-# [...ADD CODE HERE...]
+set.seed(304)
+
+num_days <- 10
+
+start_date <- as.Date("2023-01-01")
+dates <- seq(start_date, by = "day", length.out = num_days)
+
+marriage_licenses <- rpois(num_days, lambda = 10)
+
+marriage_data <- data.frame(
+  Date = dates,
+  LicensesIssued = marriage_licenses
+)
+
+write.csv(marriage_data, "marriage_license_data.csv", row.names = FALSE)
+
+ggplot(marriage_data, aes(x = Date, y = LicensesIssued)) +
+  geom_line(color = "blue") +
+  labs(title = "Daily Marriage Licenses Issued",
+       x = "Date",
+       y = "Number of Licenses Issued") +
+  theme_minimal()
 
 
 
