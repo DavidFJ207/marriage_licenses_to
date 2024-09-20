@@ -1,18 +1,12 @@
+# macOS-specific files
 **/.DS_Store
-.Rproj.user
-.Rhistory
-.Rdata
-.httr-oauth
 .DS_Store
 
-# History files
+# RStudio files
+.Rproj.user/
 .Rhistory
-.Rapp.history
-
-# Session Data files
-.RData
-
-# User-specific files
+.Rdata
+.Renviron
 .Ruserdata
 
 # Example code in package build process
@@ -24,14 +18,11 @@
 # Output files from R CMD check
 /*.Rcheck/
 
-# RStudio files
-.Rproj.user/
-
-# produced vignettes
+# Produced vignettes
 vignettes/*.html
 vignettes/*.pdf
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+# OAuth2 token
 .httr-oauth
 
 # knitr and R markdown default cache directories
@@ -42,5 +33,9 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 
-# R Environment Variables
-.Renviron
+# R history and session data files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
